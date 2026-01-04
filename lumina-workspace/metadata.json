@@ -1,0 +1,5 @@
+{
+  "name": "Lumina Workspace",
+  "description": "A high-performance, AI-augmented collaborative workspace with block-based editing, workspace management, and fine-grained permissions.",
+  "requestFramePermissions": []
+}
