@@ -14,7 +14,8 @@ export enum BlockType {
   IMAGE = 'image',
   VIDEO = 'video',
   EMBED = 'embed',
-  TABLE = 'table',
+  TABLE = 'table', // Simple table
+  DATABASE = 'database', // Advanced database
   DIVIDER = 'divider',
   COLUMN_GROUP = 'column_group',
   COLUMN = 'column'
@@ -24,6 +25,58 @@ export enum PermissionRole {
   OWNER = 'owner',
   EDITOR = 'editor',
   VIEWER = 'viewer'
+}
+
+export enum DatabasePropertyType {
+  TEXT = 'text',
+  NUMBER = 'number',
+  SELECT = 'select',
+  MULTI_SELECT = 'multi_select',
+  DATE = 'date',
+  PERSON = 'person',
+  CHECKBOX = 'checkbox',
+  URL = 'url',
+  EMAIL = 'email'
+}
+
+export enum DatabaseViewType {
+  TABLE = 'table',
+  BOARD = 'board',
+  CALENDAR = 'calendar',
+  GALLERY = 'gallery'
+}
+
+export interface SelectOption {
+  id: string;
+  name: string;
+  color: string;
+}
+
+export interface DatabaseProperty {
+  id: string;
+  name: string;
+  type: DatabasePropertyType;
+  options?: SelectOption[];
+}
+
+export interface DatabaseSort {
+  propertyId: string;
+  direction: 'asc' | 'desc';
+}
+
+export interface DatabaseFilter {
+  id: string;
+  propertyId: string;
+  operator: string;
+  value: any;
+}
+
+export interface DatabaseView {
+  id: string;
+  name: string;
+  type: DatabaseViewType;
+  filter?: DatabaseFilter[];
+  sort?: DatabaseSort[];
 }
 
 export type FontStyle = 'sans' | 'serif' | 'mono';
@@ -47,9 +100,17 @@ export interface Block {
     language?: string;
     url?: string;
     icon?: string;
-    rows?: string[][]; // For tables
+    rows?: string[][]; // For simple tables
     isExpanded?: boolean; // For toggles
     width?: string; // For columns
+
+    // Database specific
+    databaseConfig?: {
+      views: DatabaseView[];
+      properties: DatabaseProperty[];
+      currentViewId: string;
+    };
+    propertyValues?: Record<string, any>; // { propertyId: value }
   };
 }
 
@@ -99,6 +160,12 @@ export interface Page {
   isDeleted?: boolean;
   isFavorite?: boolean;
   lastOpened?: number;
+
+  // Publishing & Security
+  isPublished?: boolean;
+  isLocked?: boolean;
+  password?: string;
+  guests?: WorkspaceMember[]; // Page-specific guests
 }
 
 export interface Workspace {

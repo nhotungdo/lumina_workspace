@@ -14,11 +14,69 @@ interface CommentPanelProps {
   title: string;
 }
 
-const CommentPanel: React.FC<CommentPanelProps> = ({ 
-  isOpen, 
-  onClose, 
-  comments, 
-  members, 
+
+interface CommentItemProps {
+  comment: Comment;
+  isReply?: boolean;
+  members: WorkspaceMember[];
+  onResolve: (id: string) => void;
+  onReply: (id: string) => void;
+}
+
+const CommentItem: React.FC<CommentItemProps> = ({ comment, isReply = false, members, onResolve, onReply }) => {
+  const author = members.find(m => m.id === comment.authorId);
+  return (
+    <div className={`group py-3 ${isReply ? 'ml-8 border-l border-gray-100 pl-4' : 'border-b border-gray-50'}`}>
+      <div className="flex items-start gap-3">
+        <img src={author?.avatar} className="w-8 h-8 rounded-full border" alt="" />
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center justify-between mb-0.5">
+            <span className="text-sm font-bold">{author?.name}</span>
+            <span className="text-[10px] text-gray-400">
+              {new Date(comment.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+            </span>
+          </div>
+          <p className="text-sm text-gray-700 whitespace-pre-wrap">{comment.content}</p>
+
+          {!comment.isResolved && (
+            <div className="mt-2 flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
+              <button
+                onClick={() => onReply(comment.id)}
+                className="text-[10px] font-bold text-gray-400 hover:text-gray-600 uppercase"
+              >
+                Reply
+              </button>
+              {!isReply && (
+                <button
+                  onClick={() => onResolve(comment.id)}
+                  className="text-[10px] font-bold text-gray-400 hover:text-blue-600 uppercase flex items-center gap-1"
+                >
+                  <ICONS.CheckCircle /> Resolve
+                </button>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+      {comment.replies?.map(reply => (
+        <CommentItem
+          key={reply.id}
+          comment={reply}
+          isReply
+          members={members}
+          onResolve={onResolve}
+          onReply={onReply}
+        />
+      ))}
+    </div>
+  );
+};
+
+const CommentPanel: React.FC<CommentPanelProps> = ({
+  isOpen,
+  onClose,
+  comments,
+  members,
   currentUser,
   onAddComment,
   onResolve,
@@ -37,48 +95,6 @@ const CommentPanel: React.FC<CommentPanelProps> = ({
     setReplyingTo(null);
   };
 
-  const CommentItem = ({ comment, isReply = false }: { comment: Comment, isReply?: boolean }) => {
-    const author = members.find(m => m.id === comment.authorId);
-    return (
-      <div className={`group py-3 ${isReply ? 'ml-8 border-l border-gray-100 pl-4' : 'border-b border-gray-50'}`}>
-        <div className="flex items-start gap-3">
-          <img src={author?.avatar} className="w-8 h-8 rounded-full border" alt="" />
-          <div className="flex-1 min-w-0">
-            <div className="flex items-center justify-between mb-0.5">
-              <span className="text-sm font-bold">{author?.name}</span>
-              <span className="text-[10px] text-gray-400">
-                {new Date(comment.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-              </span>
-            </div>
-            <p className="text-sm text-gray-700 whitespace-pre-wrap">{comment.content}</p>
-            
-            {!comment.isResolved && (
-              <div className="mt-2 flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                <button 
-                  onClick={() => setReplyingTo(comment.id)}
-                  className="text-[10px] font-bold text-gray-400 hover:text-gray-600 uppercase"
-                >
-                  Reply
-                </button>
-                {!isReply && (
-                  <button 
-                    onClick={() => onResolve(comment.id)}
-                    className="text-[10px] font-bold text-gray-400 hover:text-blue-600 uppercase flex items-center gap-1"
-                  >
-                    <ICONS.CheckCircle /> Resolve
-                  </button>
-                )}
-              </div>
-            )}
-          </div>
-        </div>
-        {comment.replies?.map(reply => (
-          <CommentItem key={reply.id} comment={reply} isReply />
-        ))}
-      </div>
-    );
-  };
-
   return (
     <aside className="fixed right-0 top-0 bottom-0 w-80 bg-white shadow-2xl z-[100] flex flex-col border-l border-gray-200 animate-in slide-in-from-right duration-200">
       <header className="px-4 h-12 flex items-center justify-between border-b border-gray-100">
@@ -91,12 +107,20 @@ const CommentPanel: React.FC<CommentPanelProps> = ({
       <div className="flex-1 overflow-y-auto p-4 custom-scrollbar">
         {comments.length === 0 ? (
           <div className="h-full flex flex-col items-center justify-center text-gray-400 text-center opacity-50">
-             <div className="mb-2 scale-150"><ICONS.Message /></div>
-             <p className="text-xs">No comments yet</p>
+            <div className="mb-2 scale-150"><ICONS.Message /></div>
+            <p className="text-xs">No comments yet</p>
           </div>
         ) : (
           <div className="space-y-1">
-            {comments.map(c => <CommentItem key={c.id} comment={c} />)}
+            {comments.map(c => (
+              <CommentItem
+                key={c.id}
+                comment={c}
+                members={members}
+                onResolve={onResolve}
+                onReply={setReplyingTo}
+              />
+            ))}
           </div>
         )}
       </div>
@@ -121,7 +145,7 @@ const CommentPanel: React.FC<CommentPanelProps> = ({
               }
             }}
           />
-          <button 
+          <button
             type="submit"
             className="absolute right-2 bottom-2 p-1.5 text-blue-600 hover:bg-blue-50 rounded transition-colors"
           >
