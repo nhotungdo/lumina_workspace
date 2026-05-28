@@ -31,6 +31,15 @@ class DeleteNote extends NotesEvent {
   List<Object?> get props => [id];
 }
 
+class DeletePermanently extends NotesEvent {
+  final String id;
+  const DeletePermanently(this.id);
+  @override
+  List<Object?> get props => [id];
+}
+
+class EmptyTrash extends NotesEvent {}
+
 class ToggleFavorite extends NotesEvent {
   final String id;
   const ToggleFavorite(this.id);
@@ -57,4 +66,11 @@ class SearchNotes extends NotesEvent {
   const SearchNotes(this.query);
   @override
   List<Object?> get props => [query];
+}
+
+class FilterByCategory extends NotesEvent {
+  final String? categoryId; // null means show all
+  const FilterByCategory(this.categoryId);
+  @override
+  List<Object?> get props => [categoryId];
 }

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="204a195e-8c4b-445f-b783-dad51c10c03f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/lumina_workspace.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/lumina_workspace.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes_app/.metadata" beforeDir="false" afterPath="$PROJECT_DIR$/notes_app/.metadata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes_app/android/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/notes_app/android/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes_app/android/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/notes_app/android/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes_app/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/notes_app/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes_app/lib/blocs/auth/auth_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/notes_app/lib/blocs/auth/auth_bloc.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes_app/lib/blocs/auth/auth_event.dart" beforeDir="false" afterPath="$PROJECT_DIR$/notes_app/lib/blocs/auth/auth_event.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes_app/lib/blocs/auth/auth_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/notes_app/lib/blocs/auth/auth_state.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes_app/lib/blocs/notes/notes_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/notes_app/lib/blocs/notes/notes_bloc.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes_app/lib/blocs/notes/notes_event.dart" beforeDir="false" afterPath="$PROJECT_DIR$/notes_app/lib/blocs/notes/notes_event.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes_app/lib/blocs/notes/notes_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/notes_app/lib/blocs/notes/notes_state.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes_app/lib/routes/app_router.dart" beforeDir="false" afterPath="$PROJECT_DIR$/notes_app/lib/routes/app_router.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes_app/lib/screens/auth/login_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/notes_app/lib/screens/auth/login_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes_app/lib/screens/category/category_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/notes_app/lib/screens/category/category_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes_app/lib/screens/home/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/notes_app/lib/screens/home/home_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes_app/lib/screens/note/create_note_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/notes_app/lib/screens/note/create_note_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes_app/lib/screens/note/note_detail_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/notes_app/lib/screens/note/note_detail_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes_app/lib/screens/profile/profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/notes_app/lib/screens/profile/profile_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes_app/lib/screens/reminder/reminder_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/notes_app/lib/screens/reminder/reminder_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes_app/lib/screens/splash/splash_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/notes_app/lib/screens/splash/splash_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes_app/lib/screens/statistics/statistics_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/notes_app/lib/screens/statistics/statistics_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes_app/lib/screens/trash/trash_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/notes_app/lib/screens/trash/trash_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes_app/linux/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/notes_app/linux/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes_app/linux/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/notes_app/linux/flutter/generated_plugins.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes_app/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/notes_app/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes_app/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/notes_app/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes_app/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/notes_app/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes_app/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/notes_app/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes_app/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/notes_app/windows/flutter/generated_plugins.cmake" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;nhotungdo&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/nhotungdo/lumina_workspace.git&quot;,
+    &quot;accountId&quot;: &quot;f19ce768-2bb8-4a6c-b8d4-78f07c161d86&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="3E5N6n6k0WI0vDuCCFbOzzgkvBq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "dart.settings",
+    "show.migrate.to.gradle.popup": "false"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="204a195e-8c4b-445f-b783-dad51c10c03f" name="Changes" comment="" />
+      <created>1779464298460</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1779464298460</updated>
+    </task>
+    <servers />
+  </component>
+</project>

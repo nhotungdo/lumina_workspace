@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter/material.dart';
 import '../screens/splash/splash_screen.dart';
 import '../screens/onboarding/onboarding_screen.dart';
 import '../screens/auth/login_screen.dart';
 import '../screens/auth/register_screen.dart';
+import '../screens/auth/forgot_password_screen.dart';
 import '../screens/home/home_screen.dart';
 import '../screens/note/create_note_screen.dart';
 import '../screens/note/note_detail_screen.dart';
@@ -24,17 +24,6 @@ final appRouter = GoRouter(
     GoRoute(
       path: '/',
       builder: (context, state) => const SplashScreen(),
-      redirect: (context, state) async {
-        final prefs = await SharedPreferences.getInstance();
-        final hasSeenOnboarding = prefs.getBool('has_seen_onboarding') ?? false;
-        final isLoggedIn = prefs.getBool('is_logged_in') ?? false;
-        
-        await Future.delayed(const Duration(seconds: 2));
-        
-        if (!hasSeenOnboarding) return '/onboarding';
-        if (!isLoggedIn) return '/login';
-        return '/home';
-      },
     ),
     GoRoute(
       path: '/onboarding',
@@ -49,12 +38,20 @@ final appRouter = GoRouter(
       builder: (context, state) => const RegisterScreen(),
     ),
     GoRoute(
+      path: '/forgot-password',
+      builder: (context, state) => const ForgotPasswordScreen(),
+    ),
+    GoRoute(
       path: '/home',
       builder: (context, state) => const HomeScreen(),
     ),
     GoRoute(
       path: '/create-note',
-      builder: (context, state) => const CreateNoteScreen(),
+      builder: (context, state) {
+        // extra can be a Note (edit mode) or null (create mode)
+        final existingNote = state.extra as Note?;
+        return CreateNoteScreen(existingNote: existingNote);
+      },
     ),
     GoRoute(
       path: '/note-detail',
